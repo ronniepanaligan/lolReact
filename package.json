@@ -1,0 +1,20 @@
+{
+  "name": "lolreact",
+  "version": "1.0.0",
+  "description": "This repository is meant for me to utilize my web development skills by using the League of Legends API",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronniepanaligan/lolReact.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ronniepanaligan/lolReact/issues"
+  },
+  "homepage": "https://github.com/ronniepanaligan/lolReact#readme"
+}
