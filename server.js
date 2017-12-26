@@ -5,9 +5,9 @@ const logger = require('morgan');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const methodOverride = require('method-override');
-const mongoose = require('mongoose');
-const request = require('request');
 const passport = require('passport');
+const mongoose = require('mongoose');
+const config = require('./config/main');
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -22,13 +22,11 @@ app.use(logger('dev'));
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(bodyParser.json());
 app.use(methodOverride());
-app.use(session({ secret: secret, saveUninitialized: true, resave: true, cookie: { maxAge: 60 }  }));
+app.use(session({ secret: config.secret, saveUninitialized: true, resave: true, cookie: { maxAge: 60 }  }));
 app.use(passport.initialize());
 app.use(passport.session());
 
-const api = require('./routes/api.js')(app);
-const routes = require('./routes/routes')(app);
-const auth = require('./routes/auth')(app);
+require('./config/passport');
 
 app.get('/*', function (req, res) {
   res.sendFile(__dirname + '/dist/index.html');
