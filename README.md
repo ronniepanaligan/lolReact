@@ -1,4 +1,4 @@
-This repository is meant for me to utilize my web development skills by using the League of Legends API
+This repository is meant to help me improve my fullstack React skills.
 
 ## Possible Technologies to use
 1. React + Node
