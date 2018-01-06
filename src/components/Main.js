@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Redirect } from 'react-router';
-import { Container, Divider, Dropdown, Grid, Header, Image, List, Menu, Segment } from 'semantic-ui-react';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Grid, Row, Col, PageHeader, FormGroup, FormControl, Button } from 'react-bootstrap';
 
 class Main extends Component {
   constructor(props) {
@@ -13,36 +13,33 @@ class Main extends Component {
 
     return (
       <div>
-        <Menu fixed='top' inverted>
-          <Container>
-            <Menu.Item as='a' header>
-              lolReact
-            </Menu.Item>
-            <Menu.Item as='a'>Home</Menu.Item>
+        <Navbar inverse collapseOnSelect>
+          <Navbar.Header>
+            <Navbar.Brand>
+              <a href="#">lolReact</a>
+            </Navbar.Brand>
+            <Navbar.Toggle />
+          </Navbar.Header>
+          <Navbar.Collapse>
+            <Nav pullRight>
+              <NavItem eventKey={1} href="#">Link Right</NavItem>
+              <NavItem eventKey={2} href="#">Link Right</NavItem>
+            </Nav>
+          </Navbar.Collapse>
+        </Navbar>
 
-            <Dropdown item simple text='Dropdown'>
-              <Dropdown.Menu>
-                <Dropdown.Item>List Item</Dropdown.Item>
-                <Dropdown.Item>List Item</Dropdown.Item>
-                <Dropdown.Divider />
-                <Dropdown.Header>Header Item</Dropdown.Header>
-                <Dropdown.Item>
-                  <i className='dropdown icon' />
-                  <span className='text'>Submenu</span>
-                  <Dropdown.Menu>
-                    <Dropdown.Item>List Item</Dropdown.Item>
-                    <Dropdown.Item>List Item</Dropdown.Item>
-                  </Dropdown.Menu>
-                </Dropdown.Item>
-                <Dropdown.Item>List Item</Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown>
-          </Container>
-        </Menu>
-        <Container text style={{ marginTop: '7em' }}>
-          <Header as='h1'>lolReact</Header>
-          <p>This is a basic FullStack React and Node app that utilizes Riots LoL API.</p>
-        </Container>
+        <Grid>
+          <Row className="show-grid">
+            <Col xs={12} md={8}>
+              <PageHeader>lolReact is an application for LoL that displays summoners match history and current game info</PageHeader>
+              <FormGroup>
+                <FormControl type="text" placeholder="Search" />
+                <Button bsStyle="primary">Submit</Button>
+              </FormGroup>
+            </Col>
+            <Col xs={6} md={4}><code>&lt;{'Col xs={6} md={4}'} /&gt;</code></Col>
+          </Row>
+        </Grid>
       </div>
     );
   }

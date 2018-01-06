@@ -28,6 +28,9 @@ app.use(passport.session());
 
 require('./config/passport');
 
+const api = require('./routes/api');
+app.use('/api', api);
+
 app.get('/*', function (req, res) {
   res.sendFile(__dirname + '/dist/index.html');
 });
