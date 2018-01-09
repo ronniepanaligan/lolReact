@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { BrowserRouter, Route } from 'react-router-dom';
 import { Redirect } from 'react-router';
-import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Grid, Row, Col, PageHeader, FormGroup, FormControl, Button } from 'react-bootstrap';
+import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Grid, Row, Col, PageHeader, Form, FormGroup, FormControl, Button, InputGroup } from 'react-bootstrap';
 
 class Main extends Component {
   constructor(props) {
@@ -27,20 +27,15 @@ class Main extends Component {
             </Nav>
           </Navbar.Collapse>
         </Navbar>
-
-        <Grid>
-          <Row className="show-grid">
-            <Col xs={12} md={8}>
-              <PageHeader>lolReact is an application for LoL that displays summoners match history and current game info</PageHeader>
-              <FormGroup>
-                <FormControl type="text" placeholder="Search" />
-                <Button bsStyle="primary">Submit</Button>
-              </FormGroup>
-            </Col>
-            <Col xs={6} md={4}><code>&lt;{'Col xs={6} md={4}'} /&gt;</code></Col>
-          </Row>
-        </Grid>
+        <PageHeader>Search for a Summoner</PageHeader>
+        <Navbar.Form>
+          <FormGroup>
+            <FormControl type="text" placeholder="Search" />
+          </FormGroup>
+          <Button type="submit">Submit</Button>
+        </Navbar.Form>
       </div>
+
     );
   }
 }
