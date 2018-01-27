@@ -6,7 +6,6 @@ import { Navbar, Nav, NavItem, NavDropdown, MenuItem, Grid, Row, Col, PageHeader
 class Main extends Component {
   constructor(props) {
     super(props);
-
   }
 
   render() {
