@@ -28,8 +28,6 @@ passport.use('local-login',new LocalStrategy({
     if(!summoner){
       return done(null, false, { error: 'Your login details were wrong'})
     }
-
     return done(null, summoner);
-
   });
 }));
