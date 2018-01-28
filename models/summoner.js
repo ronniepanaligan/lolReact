@@ -5,7 +5,7 @@ var summonerModel = new schema({
   id: Number,
   accountId: Number,
   name: String,
-  profileIcon: Number,
+  profileIconId: Number,
   summonerLevel: Number
 });
 
