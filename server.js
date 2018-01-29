@@ -8,8 +8,10 @@ const methodOverride = require('method-override');
 const passport = require('passport');
 const mongoose = require('mongoose');
 const config = require('./config/main');
+const cors = require('cors')
 
 const app = express();
+app.use(cors());
 const port = process.env.PORT || 3000;
 
 mongoose.Promise = global.Promise;

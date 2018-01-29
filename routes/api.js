@@ -12,14 +12,13 @@ router.post('/summoner/:summoner_name', (req, res, next) => {
 
   axios.get(baseURL + 'summoner/v3/summoners/by-name/' + name + apiKey)
   .then((response) => {
-    const lName = name.toLowerCase();
-
-    Summoner.findOne({ name: lName }, function(err, summoner) {
+    const aId = response.data.accountId;
+    Summoner.findOne({ accountId: aId }, function(err, summoner) {
       if(summoner == null) {
         Summoner.create({
           id: response.data.id,
           accountId: response.data.accountId,
-          name: lName,
+          name: response.data.name,
           profileIconId: response.data.profileIconId,
           summonerLevel: response.data.summonerLevel
         }, function(err) {
